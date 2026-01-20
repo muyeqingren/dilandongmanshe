@@ -1,0 +1,582 @@
+/* ====================
+   迪兰动漫社 - 最终配色调整版 (白顶 + 灰底)
+   ==================== */
+
+/* 引入中文字体优化 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    color: #333;
+    background-color: #f4f6f9; /* 全局灰白底 */
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+/* ====================
+   1. 顶部导航栏 (Header) - 纯白背景
+   ==================== */
+header {
+    background: #ffffff; /* 【修改】改为纯白色，不再透明 */
+    padding: 0 5%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+nav li {
+    text-align: center;
+    cursor: pointer;
+}
+
+/* 导航文字样式 */
+nav li .en {
+    display: block;
+    font-size: 14px;
+    font-weight: 800;
+    color: #333;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+nav li .cn {
+    display: block;
+    font-size: 12px;
+    color: #999;
+    margin-top: 4px;
+    transition: color 0.3s;
+}
+
+/* 激活状态：单纯变蓝 */
+nav li:hover .en,
+nav li.active .en {
+    color: #00a1d6;
+}
+
+nav li:hover .cn,
+nav li.active .cn {
+    color: #00a1d6;
+}
+
+/* ====================
+   2. 全屏滚动容器
+   ==================== */
+.scroll-container {
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+/* 每一个全屏页面 - 默认灰白底 */
+.page-section {
+    height: 100vh;
+    width: 100%;
+    scroll-snap-align: start;
+    position: relative;
+    padding-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f6f9; /* 【修改】所有板块默认背景改为灰白色 */
+}
+
+/* ====================
+   3. 第一屏：首页大图 (Home)
+   ==================== */
+#home {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://picsum.photos/1920/1080?random=1');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin: 20px 0 40px;
+    letter-spacing: 2px;
+    opacity: 0.9;
+}
+
+.hero-btn {
+    padding: 15px 40px;
+    background: #00a1d6;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 50px;
+    font-size: 18px;
+    box-shadow: 0 5px 15px rgba(0, 161, 214, 0.4);
+}
+
+.hero-btn:hover {
+    background: #008ebd;
+}
+
+/* ====================
+   4. 第二屏：情报界面 (Info)
+   ==================== */
+#info {
+    background-color: #f4f6f9; /* 保持灰白 */
+}
+
+.content-wrapper {
+    width: 90%;
+    max-width: 1200px;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title {
+    margin-bottom: 30px;
+    border-left: 6px solid #00a1d6;
+    padding-left: 20px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    color: #333;
+}
+
+.section-title span {
+    font-size: 14px;
+    color: #aaa;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+/* 情报列表容器 - 白色卡片在灰底上更显眼 */
+.notice-list-full {
+    background: #fff; /* 卡片保持白色 */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.notice-item {
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+}
+
+.notice-meta {
+    font-size: 14px;
+    color: #999;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.tag {
+    background: #00a1d6;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.tag.act {
+    background: #ff7f50;
+}
+
+.notice-title {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.notice-desc {
+    font-size: 14px;
+    color: #666;
+}
+
+/* ====================
+   5. 第三屏：部门界面 (Dept)
+   ==================== */
+#dept {
+    background-color: #f4f6f9; /* 【修改】背景改为灰白 */
+}
+
+.grid-box {
+    display: grid;
+    gap: 30px;
+    padding: 10px;
+    flex-grow: 1;
+    overflow-y: auto;
+    /* 默认手机竖屏：1 列 */
+    grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 600px) {
+    .grid-box { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+    .grid-box { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* 卡片 - 白色 */
+.card {
+    background: #fff; /* 卡片白色 */
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee; /* 稍微加点边框增加立体感 */
+    padding-bottom: 15px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 161, 214, 0.15);
+    border-color: #00a1d6;
+}
+
+.img-box {
+    width: 100%;
+    height: 140px;
+    background: #eef2f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+}
+
+.card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.card h3 {
+    margin: 15px 0 5px;
+    color: #333;
+}
+
+.card p {
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.btn {
+    padding: 5px 20px;
+    border: 1px solid #00a1d6;
+    color: #00a1d6;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.btn:hover {
+    background: #00a1d6;
+    color: #fff;
+}
+
+/* ====================
+   6. 第四屏：设定 (World)
+   ==================== */
+#world {
+    background-color: #f4f6f9; /* 保持灰白 */
+}
+
+.world-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    height: 100%;
+    align-items: center;
+}
+
+.world-card {
+    flex: 1;
+    background: #fff; /* 卡片白色 */
+    padding: 40px 20px;
+    border-radius: 12px;
+    text-align: center;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border-top: 5px solid #00a1d6;
+    transition: 0.3s;
+}
+
+.world-card:hover {
+    transform: translateY(-10px);
+    background: #00a1d6;
+    color: #fff;
+}
+
+.world-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.world-card p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #666;
+}
+
+.world-card:hover p, .world-card:hover h3 {
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .world-grid { flex-direction: column; height: auto; padding-bottom: 50px;}
+    .world-card { width: 100%; height: auto; }
+}
+
+
+/* ====================
+   7. 第五屏：舞台剧 (Stage)
+   ==================== */
+#stage {
+    background-color: #f4f6f9; /* 【修改】背景改为灰白 */
+}
+
+.poster-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.poster-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: 0.4s;
+    background: #000;
+}
+
+.poster-img-box {
+    width: 100%;
+    padding-top: 150%;
+    position: relative;
+    background: #333;
+}
+
+.poster-img-box img,
+.poster-img-box div {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 20px; font-weight: bold;
+}
+
+.poster-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    color: #fff;
+    transform: translateY(100%);
+    transition: 0.3s;
+}
+
+.poster-card:hover { transform: scale(1.02); }
+.poster-card:hover .poster-info { transform: translateY(0); }
+
+@media (max-width: 768px) {
+    .poster-grid { grid-template-columns: 1fr; }
+}
+
+
+/* ====================
+   8. 进场动画 (恢复 0.8s 快节奏)
+   ==================== */
+.content-wrapper,
+.hero-content {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.page-section.active-anim .content-wrapper,
+.page-section.active-anim .hero-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.page-section.active-anim .card:nth-child(1) { transition-delay: 0.1s; }
+.page-section.active-anim .card:nth-child(2) { transition-delay: 0.15s; }
+.page-section.active-anim .card:nth-child(3) { transition-delay: 0.2s; }
+.page-section.active-anim .world-card:nth-child(1) { transition-delay: 0.1s; }
+.page-section.active-anim .world-card:nth-child(2) { transition-delay: 0.2s; }
+.page-section.active-anim .world-card:nth-child(3) { transition-delay: 0.3s; }
+
+/* ====================
+   9. 加载遮罩层
+   ==================== */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f0faff 0%, #ffffff 100%);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.6s ease, visibility 0.6s;
+}
+
+.loader-content {
+    text-align: center;
+    transform: translateY(-20px);
+}
+
+.loader-content h2 {
+    margin: 25px 0 10px;
+    color: #333;
+    font-size: 24px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.loader-content p {
+    color: #00a1d6;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.anime-dots-loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+.anime-dots-loader span {
+    width: 15px;
+    height: 15px;
+    margin: 0 6px;
+    background-color: #00a1d6;
+    border-radius: 50%;
+    animation: anime-bounce 1.4s infinite ease-in-out both;
+}
+
+.anime-dots-loader span:nth-child(1) { animation-delay: -0.32s; }
+.anime-dots-loader span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes anime-bounce {
+    0%, 80%, 100% {
+        transform: scale(0.6);
+        opacity: 0.5;
+    }
+    40% {
+        transform: scale(1.2) translateY(-10px);
+        opacity: 1;
+        box-shadow: 0 5px 15px rgba(0, 161, 214, 0.4);
+    }
+}
+
+.hide-loader {
+    opacity: 0;
+    visibility: hidden;
+}
+/* ====================
+   新增：情报详情页样式
+   ==================== */
+.article-page {
+    padding-top: 100px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.article-container {
+    width: 90%;
+    max-width: 800px;
+    background: #fff;
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    margin-bottom: 50px;
+}
+.article-header {
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+.article-title {
+    font-size: 28px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.article-meta {
+    font-size: 14px;
+    color: #999;
+    display: flex;
+    gap: 20px;
+}
+.article-content {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+}
+.article-content p { margin-bottom: 20px; text-align: justify; }
+.article-content h3 { margin-top: 30px; margin-bottom: 15px; color: #00a1d6; font-size: 18px; border-left: 4px solid #00a1d6; padding-left: 10px; }
+.back-btn-container { margin-top: 40px; text-align: center; border-top: 1px solid #f0f0f0; padding-top: 30px; }
+.back-btn { display: inline-block; padding: 10px 30px; background: #f4f6f9; color: #666; border-radius: 30px; transition: 0.3s; font-weight: bold; font-size: 14px; }
+.back-btn:hover { background: #00a1d6; color: #fff; }

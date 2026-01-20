@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>迪兰动漫社 - 首页</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="database.js"></script>
+</head>
+<body>
+
+<div id="loading-screen">
+    <div class="loader-content">
+        <div class="anime-dots-loader"><span></span><span></span><span></span></div>
+        <h2>迪兰动漫社</h2>
+        <p>LOADING RESOURCES...</p>
+    </div>
+</div>
+<script>
+    window.addEventListener('load', function() {
+        setTimeout(function() { document.getElementById('loading-screen').classList.add('hide-loader'); }, 500);
+    });
+</script>
+
+<header>
+    <div class="logo"><img src="images/logo.png" alt="迪兰动漫社 Logo"></div>
+    <nav>
+        <ul>
+            <li><a href="#home"><span class="en">INDEX</span><span class="cn">首页</span></a></li>
+            <li><a href="#info"><span class="en">INFORMATION</span><span class="cn">情报</span></a></li>
+            <li><a href="#dept"><span class="en">DEPARTMENT</span><span class="cn">部门</span></a></li>
+            <li><a href="#world"><span class="en">WORLD</span><span class="cn">设定</span></a></li>
+            <li><a href="#stage"><span class="en">STAGE</span><span class="cn">舞台剧</span></a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="scroll-container">
+
+    <section id="home" class="page-section">
+        <div class="hero-content">
+            <h1>DYLAN<br>ANIME CLUB</h1>
+            <p>打破次元壁 · 寻找你的热爱</p>
+            <a href="#dept" class="hero-btn">加入我们 / JOIN US</a>
+        </div>
+    </section>
+
+    <section id="info" class="page-section">
+        <div class="content-wrapper">
+            <div class="section-title">
+                <h2>情报中心</h2>
+                <span>INTELLIGENCE</span>
+            </div>
+
+            <div class="notice-list-full" id="notice-container">
+            </div>
+        </div>
+    </section>
+
+    <section id="dept" class="page-section">
+        <div class="content-wrapper">
+            <div class="section-title"><h2>部门一览</h2><span>DEPARTMENTS</span></div>
+            <div class="grid-box">
+                <div class="card"><div class="img-box">默认图片</div><h3>配音部</h3><p>VOICE ACTING</p><a href="peiyin.html" class="btn">进入部门</a></div>
+                <div class="card"><div class="img-box">默认图片</div><h3>宅舞部</h3><p>DANCE TEAM</p><a href="zhaiwu.html" class="btn">进入部门</a></div>
+                <div class="card"><div class="img-box">默认图片</div><h3>绘画部</h3><p>ART WORKS</p><a href="huihua.html" class="btn">进入部门</a></div>
+                <div class="card"><div class="img-box">默认图片</div><h3>摄影部</h3><p>PHOTOGRAPHY</p><a href="sheying.html" class="btn">进入部门</a></div>
+                <div class="card"><div class="img-box">默认图片</div><h3>化妆部</h3><p>MAKE UP</p><a href="huazhuang.html" class="btn">进入部门</a></div>
+                <div class="card"><div class="img-box">默认图片</div><h3>道具部</h3><p>PROPS MAKER</p><a href="daoju.html" class="btn">进入部门</a></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="world" class="page-section">
+        <div class="content-wrapper">
+            <div class="section-title"><h2>社团设定</h2><span>CLUB CULTURE</span></div>
+            <div class="world-grid">
+                <div class="world-card"><h3>热爱</h3><p>我们因热爱而相聚。<br>无论是番剧、游戏还是Cosplay，<br>这里永远有懂你的伙伴。</p></div>
+                <div class="world-card"><h3>创意</h3><p>拒绝平庸，用创作发声。<br>舞台剧、原创画作、宅舞视频，<br>我们用行动打破次元壁。</p></div>
+                <div class="world-card"><h3>羁绊</h3><p>迪兰动漫社不仅仅是一个社团，<br>更是一个大家庭。<br>在这里，我们共同成长。</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stage" class="page-section">
+        <div class="content-wrapper">
+            <div class="section-title"><h2>年度大戏</h2><span>STAGE PERFORMANCE</span></div>
+            <div class="poster-grid">
+                <div class="poster-card"><div class="poster-img-box"><div>Fate/Grand Order<br>绝对魔兽战线</div></div><div class="poster-info"><h3>2024 春季公演</h3><p>巴比伦尼亚的史诗，在此重现。</p></div></div>
+                <div class="poster-card"><div class="poster-img-box"><div>明日方舟<br>罗德岛行动</div></div><div class="poster-info"><h3>2025 校庆专场</h3><p>博士，欢迎回家。</p></div></div>
+                <div class="poster-card"><div class="poster-img-box"><div>紫罗兰永恒花园<br>爱与书信</div></div><div class="poster-info"><h3>2025 秋季招新</h3><p>自动手记人偶为您服务。</p></div></div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script>
+    // 1. 自动生成公告列表
+    const container = document.getElementById('notice-container');
+    // 将 notices 数组的数据插入到页面
+    notices.forEach(item => {
+        const html = `
+                <div class="notice-item" style="cursor: pointer;" onclick="window.location.href='article.html?id=${item.id}'">
+                    <div class="notice-meta">
+                        <span class="tag ${item.type === '活动' ? 'act' : ''}">${item.type}</span>
+                        ${item.date}
+                    </div>
+                    <div class="notice-title">${item.title}</div>
+                    <div class="notice-desc">${item.desc}</div>
+                </div>
+            `;
+        container.innerHTML += html;
+    });
+
+    // 2. 滚动监听与导航高亮
+    const sections = document.querySelectorAll('.page-section');
+    const navItems = document.querySelectorAll('nav ul li');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                navItems.forEach(item => item.classList.remove('active'));
+                const activeLink = document.querySelector(`nav ul li a[href="#${id}"]`);
+                if (activeLink) activeLink.parentElement.classList.add('active');
+                entry.target.classList.add('active-anim');
+            }
+        });
+    }, { threshold: 0.5 });
+    sections.forEach(section => observer.observe(section));
+</script>
+</body>
+</html>
