@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宅舞部 - 迪兰动漫社</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo"><img src="images/logo.png" alt="LOGO"></div>
+    <nav>
+        <ul>
+            <li><a href="index.html#home"><span class="en130
+">INDEX</span><span class="cn">首页</span></a></li>
+            <li><a href="index.html#info"><span class="en">INFO</span><span class="cn">情报</span></a></li>
+            <li><a href="index.html#dept"><span class="en">DEPT</span><span class="cn">部门</span></a></li>
+            <li><a href="index.html#world"><span class="en">WORLD</span><span class="cn">设定</span></a></li>
+            <li><a href="index.html#stage"><span class="en">STAGE</span><span class="cn">招募</span></a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="scroll-container">
+
+    <section id="zw-video" class="page-section">
+        <div class="video-fullscreen-bg">
+            <video id="heroVideo" class="hero-video" autoplay muted loop playsinline poster="images/dept-dance.jpg">
+                <source src="videos/dance_hero.mp4" type="video/mp4">
+            </video>
+
+            <div class="video-mask"></div>
+
+            <div class="sound-toggle-btn" onclick="toggleSound()">
+                <span id="soundIcon">🔇</span>
+                <span id="soundText">已静音</span>
+            </div>
+        </div>
+
+        <div class="video-overlay-info">
+            <h1>Hello New World</h1>
+            <p>大家一起的 · 梦想 / 启程 / 羁绊</p>
+
+            <a href="https://www.bilibili.com/video/BV13sPteNE6c" target="_blank" class="glass-btn" rel="noopener noreferrer">
+                📺 前往 Bilibili 发弹幕
+            </a>
+        </div>
+
+        <div class="scroll-hint">SCROLL DOWN</div>
+    </section>
+
+    <section id="zw-intro" class="page-section">
+        <div class="deco-text-bg">DANCE</div>
+        <div class="magazine-layout">
+            <div class="mag-left">
+                <h2>宅舞部</h2>
+                <h3>OTAKU DANCE</h3>
+                <div class="line-deco"></div>
+                <p>
+                    <span class="highlight">元气 / 热情 / 闪耀</span><br><br>
+                    这里不仅仅是还原舞蹈，<br>
+                    更是用身体感受音乐的律动。<br>
+                    无论你是零基础萌新，<br>
+                    还是挑战高难度的大佬，<br>
+                    这里都有你的舞台。
+                </p>
+                <div class="mag-tags">
+                    <span># 聚光</span>
+                    <span># Hello New World</span>
+                    <span># calc</span>
+                </div>
+            </div>
+            <div class="mag-right">
+                <div class="floating-img" style="background-image: url('images/dept-dance.jpg');"></div>
+                <div class="floating-box">
+                    <span>JOIN US</span>
+                    <b>285 人</b>
+                    <small>现有成员</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="zw-gallery" class="page-section">
+        <div class="gallery-container-full">
+            <div class="section-title-center">
+                <h2 style="color: #ff5e7e;">精彩瞬间</h2>
+                <span style="color: #ffaebc;">PHOTO GALLERY</span>
+            </div>
+            <div class="gallery-grid-row">
+                <div class="gallery-card-lg" onclick="openLightbox(this)">
+                    <img src="images/dance-gallery-1.jpg" alt="元气大合照">
+                    <div class="card-hover-text"><h3>元气大合照</h3></div>
+                </div>
+                <div class="gallery-card-lg" onclick="openLightbox(this)">
+                    <img src="images/dance-gallery-2.jpg" alt="舞台风采">
+                    <div class="card-hover-text"><h3>舞台风采</h3></div>
+                </div>
+                <div class="gallery-card-lg" onclick="openLightbox(this)">
+                    <img src="images/dance-gallery-3.jpg" alt="日常排练">
+                    <div class="card-hover-text"><h3>日常排练</h3></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="zw-more" class="page-section">
+        <div class="more-video-container">
+            <div class="section-title-center">
+                <h2 style="color: #fff;">更多作品</h2>
+                <span style="color: rgba(255,255,255,0.6);">MORE VIDEOS</span>
+            </div>
+            <div class="video-list-row">
+                <div class="mini-video-card">
+                    <div class="mini-video-box">
+                        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=358783776&bvid=BV1EX4y1n7G3&cid=1206727564&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+                    </div>
+                    <h4>【BDF×山东建筑大学】山东的梦想⭐ 生出翅膀✨❤</h4>
+                </div>
+                <div class="mini-video-card">
+                    <div class="mini-video-box">
+                        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113989673550648&bvid=BV1wfK5eHEho&cid=28349696505&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+                    </div>
+                    <h4>【迪兰动漫社】宇宙ユニバース|山东建筑大学|原创前奏|超齐超唯美</h4>
+                </div>
+            </div>
+            <div class="back-btn-area">
+                <a href="index.html#dept" class="glass-btn small">← 返回部门列表</a>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close-btn">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <div id="caption"></div>
+</div>
+
+<script>
+    // 切换静音逻辑
+    function toggleSound() {
+        var video = document.getElementById('heroVideo');
+        var icon = document.getElementById('soundIcon');
+        var text = document.getElementById('soundText');
+
+        if (video.muted) {
+            video.muted = false;
+            icon.innerText = "🔊";
+            text.innerText = "播放中";
+            video.volume = 1.0;
+        } else {
+            video.muted = true;
+            icon.innerText = "🔇";
+            text.innerText = "已静音";
+        }
+    }
+
+    // 灯箱逻辑
+    function openLightbox(element) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const caption = document.getElementById('caption');
+        const srcImg = element.querySelector('img');
+        const title = element.querySelector('h3').innerText;
+
+        lightbox.style.display = "flex";
+        lightboxImg.src = srcImg.src;
+        caption.innerHTML = title;
+    }
+    function closeLightbox() {
+        document.getElementById('lightbox').style.display = "none";
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
